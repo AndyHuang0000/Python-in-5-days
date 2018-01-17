@@ -1,6 +1,6 @@
 # 07-1 使用dict
 
-### dict是mutable hashable 鍵/值 對應物件, 鍵可以是非數字的任意值.
+### dict是mutable hashable 鍵/值對應物件, 鍵可以是非數字的任意值.
 
 #### 參考資料:https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
