@@ -1,6 +1,6 @@
 # 05-1 使用range
 
-### range是一種內容為數字的immutable sequence type, 它在生成後不可再增減內容, 其內容是有順序性的.
+### range是一種內容為數字的immutable sequence type, 它在生成後不可再增減內容, 內容有順序性.
 
 #### 參考資料:https://docs.python.org/3/library/stdtypes.html#range
 
