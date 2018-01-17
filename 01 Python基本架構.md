@@ -1,6 +1,7 @@
 # 01 Python基本架構
 
 #### Python程式比多數程式更精簡. 因為太精簡, 建議先掌握基本架構, 以免迷失在簡單之中.
+#### 參考資料:https://docs.python.org/3/library/index.html
 
 ```
      Python
