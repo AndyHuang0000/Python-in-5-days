@@ -132,7 +132,9 @@ mrt=[]
 #-------------------------------
 file = open('mrt.txt', 'r')
 for data in file.readlines():
-    mrt.append(data.strip())
+    #處理讀入的一行資料
+    data = data.strip()
+    mrt.append(data)
     
 print(mrt)
 
