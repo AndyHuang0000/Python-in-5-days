@@ -132,6 +132,7 @@ stations=[]
 #-----------------------------------------------
 file = open('mrt.txt', 'r')
 for data in file.readlines():
+    #處理讀入的一行資料
     data = data.strip()
     items = data.split(' ')
     
