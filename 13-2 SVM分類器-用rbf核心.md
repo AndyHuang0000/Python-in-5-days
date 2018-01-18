@@ -93,14 +93,17 @@ print('-'*60)
 
 ## 3.執行結果
 ```
-預測: [ 3.  2.  2.  2.  3.  1.  1.  1.  1.  2.  2.  2.  1.  2.  2.  2.  3.  3.
-  3.  1.  1.  3.  3.  3.  2.  3.  1.  3.  2.  2.]
+正確: [ 1.  1.  1.  2.  3.  1.  3.  3.  1.  2.  1.  1.  2.  2.  3.  2.  3.  1.
+  3.  2.  3.  1.  3.  3.  1.  2.  3.  2.  2.  2.]
 ------------------------------------------------------------
-比對: [False  True  True  True  True  True  True  True  True  True  True  True
-  True  True  True  True  True  True  True  True  True  True  True  True
+預測: [ 1.  1.  1.  2.  3.  1.  3.  3.  1.  2.  1.  1.  2.  2.  3.  3.  3.  1.
+  3.  2.  3.  1.  3.  2.  1.  2.  3.  2.  2.  2.]
+------------------------------------------------------------
+比對: [ True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True False  True  True  True  True  True  True  True False
   True  True  True  True  True  True]
 ------------------------------------------------------------
-正確率: 0.97
+正確率: 0.93
 ------------------------------------------------------------
 ```
 
