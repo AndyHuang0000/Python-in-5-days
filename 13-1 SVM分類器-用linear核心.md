@@ -58,9 +58,9 @@ testing_data  = data[tn:, [0,1,2,3]]
 testing_label = data[tn:, 4]
 
 
-#---------------------------
+#***********************************************
 # 建立自動分類機器人
-#---------------------------
+#***********************************************
 svm_linear = svm.SVC(kernel='linear', C=1.0)
 svm_linear.fit(training_data, training_label)
 
