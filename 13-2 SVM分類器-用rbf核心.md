@@ -61,8 +61,8 @@ testing_label = data[tn:, 4]
 #***********************************************
 # 建立自動分類機器人
 #***********************************************
-svm_linear = svm.SVC(kernel='rbf', gamma=1, C=1)
-svm_linear.fit(training_data, training_label)
+svm_rbf = svm.SVC(kernel='rbf', gamma=1, C=1)
+svm_rbf.fit(training_data, training_label)
 
 #---------------------------
 # 分類機器人測試
@@ -70,7 +70,7 @@ svm_linear.fit(training_data, training_label)
 print('正確:', testing_label)
 print('-'*60)
 
-predict = svm_linear.predict(testing_data)
+predict = svm_rbf.predict(testing_data)
 print('預測:', predict)
 print('-'*60)
 
