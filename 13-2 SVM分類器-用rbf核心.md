@@ -41,21 +41,23 @@ data=np.genfromtxt('iris.csv', delimiter=',')
 np.random.shuffle(data)
 
 #---------------------------
-# 訓練資料個數
+# 參數設定
 #---------------------------
 tn=120
+features=[0,1,2,3]
+label=4
 
 #---------------------------
 # 訓練資料及標籤
 #---------------------------
-training_data  = data[:tn, [0,1,2,3]]
-training_label = data[:tn, 4]
+training_data  = data[:tn, features]
+training_label = data[:tn, label]
 
 #---------------------------
 # 測試資料及標籤
 #---------------------------
-testing_data  = data[tn:, [0,1,2,3]]
-testing_label = data[tn:, 4]
+testing_data  = data[tn:, features]
+testing_label = data[tn:, label]
 
 
 #***********************************************
