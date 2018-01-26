@@ -7,7 +7,7 @@
 
 ```
 專案
- |__ iris.csv
+ |__ data.csv
  |__ main.py
 ```
 
@@ -15,7 +15,7 @@
 
 ## 1.讀入檔 iris.csv
 ```
-(從11-1下載)
+(如13-2)
 ```
 
 
@@ -34,29 +34,31 @@ from sklearn.model_selection import GridSearchCV
 # 讀取鳶尾花資料 (山鳶尾花, 變色鳶尾花, 維吉尼亞鳶尾花)
 # 花萼長:0, 花萼寬:1, 花瓣長:2, 花瓣寬:3, 花種編號:4
 #-------------------------------------------------
-data=np.genfromtxt('iris.csv', delimiter=',')
+data=np.genfromtxt('data.csv', delimiter=',')
 
 #---------------------------
 # 亂數重排資料
 #---------------------------
 np.random.shuffle(data)
 
-#---------------------------
-# 訓練資料個數
-#---------------------------
+#***************************
+# 參數設定
+#***************************
 tn=120
+features=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+label=0
 
 #---------------------------
 # 訓練資料及標籤
 #---------------------------
-training_data  = data[:tn, [0,1,2,3]]
-training_label = data[:tn, 4]
+training_data  = data[:tn, features]
+training_label = data[:tn, label]
 
 #---------------------------
 # 測試資料及標籤
 #---------------------------
-testing_data  = data[tn:, [0,1,2,3]]
-testing_label = data[tn:, 4]
+testing_data  = data[tn:, features]
+testing_label = data[tn:, label]
 
 
 #---------------------------
@@ -85,7 +87,6 @@ svm_rbf.fit(training_data, training_label)
 print('分類機器人參數')
 print(svm_rbf)
 print('-'*60)
-
 
 #---------------------------
 # 分類機器人測試
@@ -117,26 +118,32 @@ print('-'*60)
 ## 3.執行結果
 ```
 找出較好的C及gamma
-C = 1
-gamma = 0.25
+C = 5
+gamma = 0.01
 ------------------------------------------------------------
 分類機器人參數
-SVC(C=1, cache_size=200, class_weight=None, coef0=0.0,
-  decision_function_shape='ovr', degree=3, gamma=0.25, kernel='rbf',
+SVC(C=5, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape='ovr', degree=3, gamma=0.01, kernel='rbf',
   max_iter=-1, probability=False, random_state=None, shrinking=True,
   tol=0.001, verbose=False)
 ------------------------------------------------------------
-正確: [1. 3. 3. 3. 1. 1. 1. 2. 1. 3. 1. 2. 1. 1. 2. 1. 2. 2. 2. 3. 1. 2. 2. 1.
- 1. 3. 2. 3. 2. 3.]
+正確: [ 2.  3.  3.  1.  1.  3.  2.  1.  2.  2.  1.  2.  2.  2.  3.  1.  3.  3.
+  1.  3.  2.  2.  3.  1.  2.  2.  1.  3.  2.  3.  1.  1.  3.  3.  1.  3.
+  1.  1.  2.  1.  2.  3.  3.  1.  2.  1.  2.  2.  1.  2.  2.  3.  1.  3.
+  1.  3.  3.  3.]
 ------------------------------------------------------------
-預測: [1. 3. 3. 3. 1. 1. 1. 2. 1. 3. 1. 2. 1. 1. 2. 1. 2. 2. 2. 3. 1. 2. 2. 1.
- 1. 3. 2. 3. 2. 3.]
+預測: [ 3.  2.  2.  2.  1.  2.  2.  1.  2.  2.  2.  2.  2.  2.  2.  2.  3.  2.
+  1.  3.  2.  3.  3.  2.  2.  2.  1.  2.  2.  2.  2.  1.  3.  1.  2.  1.
+  1.  2.  2.  1.  2.  2.  3.  2.  2.  1.  2.  3.  1.  2.  2.  2.  1.  2.
+  1.  1.  1.  2.]
 ------------------------------------------------------------
-比對: [ True  True  True  True  True  True  True  True  True  True  True  True
-  True  True  True  True  True  True  True  True  True  True  True  True
-  True  True  True  True  True  True]
+比對: [False False False False  True False  True  True  True  True False  True
+  True  True False False  True False  True  True  True False  True False
+  True  True  True False  True False False  True  True False False False
+  True False  True  True  True False  True False  True  True  True False
+  True  True  True False  True False  True False False False]
 ------------------------------------------------------------
-正確率: 1.0
+正確率: 0.55
 ------------------------------------------------------------
 ```
 
